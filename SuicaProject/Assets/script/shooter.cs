@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class shooter : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		Shot(transform);
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-	protected void Shot(Transform origin)
+	public GameObject bullet;
+	public float shotDelay;
+
+	// Startメソッドをコルーチンとして呼び出す
+	IEnumerator Start ()
 	{
-		Instantiate(bullet, origin.position, origin.rotation);
+		while (true) {
+			// 弾をプレイヤーと同じ位置/角度で作成
+			Instantiate (bullet, transform.position, transform.rotation);
+			// 0.05秒待つ
+			yield return new WaitForSeconds (shotDelay);
+		}
 	}
+
+
 }

@@ -13,10 +13,24 @@ public class enemy : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		Vector3 target = GameObject.FindGameObjectWithTag("enemy").transform.position;
+		Move ();
+	}
+
+	void Move(){
+		Vector3 target = GameObject.FindGameObjectWithTag("Player").transform.position;
 		Debug.Log (target.x);
 		Vector3 angle = target - transform.position;
 		angle = angle.normalized;
 		transform.position = transform.position + (angle * speed);
+	}
+
+	void OnCollisionEnter2D (Collision2D coll)
+	{
+		if (coll.gameObject.tag == "Player") {
+			Destroy (gameObject);
+		} else if (coll.gameObject.tag == "Weapon") {
+			Score_Manager.ScoreTotal += 1;
+			Destroy (gameObject);
+		}
 	}
 }

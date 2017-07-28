@@ -20,15 +20,25 @@ public class bonus : MonoBehaviour {
 		if (transform.position.x >= StageScaleMaxX || transform.position.x <= StageScaleMinX || transform.position.y >= StageScaleMaxY || transform.position.y <= StageScaleMinY) {
 			Destroy (this.gameObject);
 		}
-		move ();
+		Move ();
 
 	}
 
-	private void move () {
-		Vector3 target = GameObject.FindGameObjectWithTag("enemy").transform.position;
+	private void Move () {
+		Vector3 target = GameObject.FindGameObjectWithTag("Player").transform.position;
 		Debug.Log (target.x);
 		Vector3 angle = target - transform.position;
 		angle = angle.normalized;
 		transform.position = transform.position + (angle * speed);
+	}
+
+	void OnCollisionEnter2D (Collision2D coll)
+	{
+		if (coll.gameObject.tag == "Player") {
+			Destroy (gameObject);
+		} else if (coll.gameObject.tag == "Weapon") {
+			Score_Manager.ScoreTotal += 3;
+			Destroy (gameObject);
+		}
 	}
 }

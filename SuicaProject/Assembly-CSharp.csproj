@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\GhostSprites2D\Scripts\CameraController.cs" />
      <Compile Include="Assets\GhostSprites2D\Scripts\GhostSprites\GhostSprites.cs" />
+     <Compile Include="Assets\script\Score_Manager.cs" />
      <Compile Include="Assets\script\bonus.cs" />
      <Compile Include="Assets\script\bullet.cs" />
      <Compile Include="Assets\script\enemy.cs" />

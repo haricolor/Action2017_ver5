@@ -30,7 +30,7 @@ public class Player : MonoBehaviour {
         OutStage();
     }
 
-    void OnTriggerOther(Collider other)
+    void OnCollisionEnter2D(Collider other)
     {
         if (other.tag == "enemy")
         {

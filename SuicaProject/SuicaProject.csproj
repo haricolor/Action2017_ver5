@@ -78,11 +78,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Script\BOX.cs" />
-    <Compile Include="Assets\Script\Getname.cs" />
-    <Compile Include="Assets\Script\RestartButton.cs" />
-    <Compile Include="Assets\Script\Rnaking.cs" />
-    <Compile Include="Assets\Script\yourScore.cs" />
+    <Compile Include="Assets\script\BOX.cs" />
+    <Compile Include="Assets\script\Getname.cs" />
+    <Compile Include="Assets\script\RestartButton.cs" />
+    <Compile Include="Assets\script\Rnaking.cs" />
+    <Compile Include="Assets\script\yourScore.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\omori.txt" />

@@ -18,7 +18,6 @@ public class enemy : MonoBehaviour {
 
 	void Move(){
 		Vector3 target = GameObject.FindGameObjectWithTag("Player").transform.position;
-		Debug.Log (target.x);
 		Vector3 angle = target - transform.position;
 		angle = angle.normalized;
 		transform.position = transform.position + (angle * speed);

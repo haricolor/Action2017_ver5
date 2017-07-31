@@ -78,33 +78,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Compile Include="Assets\GhostSprites2D\Scripts\CameraController.cs" />
     <Compile Include="Assets\GhostSprites2D\Scripts\GhostSprites\GhostSprites.cs" />
-    <Compile Include="Assets\Player.cs" />
-    <Compile Include="Assets\Scripts\HPBar.cs" />
-    <Compile Include="Assets\Scripts\Player.cs" />
-    <Compile Include="Assets\Scripts\PlayerAttack.cs" />
+    <Compile Include="Assets\script\BOX.cs" />
+    <Compile Include="Assets\script\Getname.cs" />
+    <Compile Include="Assets\script\HPBar.cs" />
+    <Compile Include="Assets\script\Player.cs" />
+    <Compile Include="Assets\script\PlayerAttack.cs" />
+    <Compile Include="Assets\script\RestartButton.cs" />
+    <Compile Include="Assets\script\Rnaking.cs" />
     <Compile Include="Assets\script\Score_Manager.cs" />
     <Compile Include="Assets\script\bonus.cs" />
     <Compile Include="Assets\script\bullet.cs" />
     <Compile Include="Assets\script\enemy.cs" />
     <Compile Include="Assets\script\red.cs" />
     <Compile Include="Assets\script\shooter.cs" />
+    <Compile Include="Assets\script\yourScore.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\GhostSprites2D\README.txt" />
-    <None Include="Assets\omorinrin.txt" />
-=======
-    <Compile Include="Assets\Script\BOX.cs" />
-    <Compile Include="Assets\Script\Getname.cs" />
-    <Compile Include="Assets\Script\RestartButton.cs" />
-    <Compile Include="Assets\Script\Rnaking.cs" />
-    <Compile Include="Assets\Script\yourScore.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Assets\omori.txt" />
->>>>>>> matsuzawa
+    <None Include="Assets\omorinrin.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

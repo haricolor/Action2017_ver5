@@ -124,6 +124,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\GhostSprites2D\README.txt" />
+    <None Include="Assets\omori.txt" />
     <None Include="Assets\omorinrin.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

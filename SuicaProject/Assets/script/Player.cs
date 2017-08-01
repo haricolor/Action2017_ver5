@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
+    public static GameObject gameManager;
+
     public float speed = 5;
     public static float HP = 100;
     public static string Vector = "Front";
@@ -35,13 +37,13 @@ public class Player : MonoBehaviour {
         if (other.tag == "enemy")
         {
             HP -= 10;
-            HeroCollider.isTrigger = false;
+            HeroCollider.isTrigger = true;
             StartCoroutine("Blinker");
         }
         if (other.tag == "bullet")
         {
             HP -= 5;
-            HeroCollider.isTrigger = false;
+            HeroCollider.isTrigger = true;
             StartCoroutine("Blinker");
         }
         Invoke("StartCollider", InvincibleTime);
@@ -98,7 +100,7 @@ public class Player : MonoBehaviour {
     {
         if(HP <= 0)
         {
-
+            gameManager.GetComponent<GameManage>().GameOver = true;
             return true;
         }
         else
@@ -117,7 +119,7 @@ public class Player : MonoBehaviour {
 
     void StartCollider()
     {
-        HeroCollider.isTrigger = true;
+        HeroCollider.isTrigger = false;
         Flash = false;
     }
 

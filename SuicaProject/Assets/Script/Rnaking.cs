@@ -35,7 +35,7 @@ public class Rnaking : MonoBehaviour {
 
 
     // Use this for initialization
-    void Start () {
+    public void Resalt_Open () {
 
         //for (int i = 0;i < 9;i++) {
         //    if (score[i] < Plyer_Score) {

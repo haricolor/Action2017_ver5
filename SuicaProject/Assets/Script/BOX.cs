@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 
 public class BOX : MonoBehaviour {
 
@@ -10,7 +9,7 @@ public class BOX : MonoBehaviour {
 
     public Text num;
 
-    public Text name;
+    public new Text name;
 
     public Text score;
 

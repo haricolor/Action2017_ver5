@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 
-public class Getname : MonoBehaviour {
+public class GetName : MonoBehaviour {
 
-    string name;
+    new string name;
 
     public InputField inputField;
 

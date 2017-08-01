@@ -30,19 +30,19 @@ public class PlayerAttack : MonoBehaviour {
             switch (Player.Vector)
             {
                 case "Front":
-                    FrontCollider.isTrigger = true;
+                    FrontCollider.isTrigger = false;
                     break;
 
                 case "Back":
-                    BackCollider.isTrigger = true;
+                    BackCollider.isTrigger = false;
                     break;
 
                 case "Right":
-                    RightCollider.isTrigger = true;
+                    RightCollider.isTrigger = false;
                     break;
 
                 case "Left":
-                    LeftCollider.isTrigger = true;
+                    LeftCollider.isTrigger = false;
                     break;
             }
         }
@@ -51,10 +51,10 @@ public class PlayerAttack : MonoBehaviour {
 
     void NotAttack()
     {
-        RightCollider.isTrigger = false;
-        LeftCollider.isTrigger = false;
-        BackCollider.isTrigger = false;
-        FrontCollider.isTrigger = false;
+        RightCollider.isTrigger = true;
+        LeftCollider.isTrigger = true;
+        BackCollider.isTrigger = true;
+        FrontCollider.isTrigger = true;
         WeaponAnim.SetBool("IsAttack", false);
     }
 

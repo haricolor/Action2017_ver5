@@ -19,14 +19,13 @@ public class enemyPop : MonoBehaviour {
 
 
     // Use this for initialization
-    void Start()
+    public void StartPop()
     {
         //配列確保
         existEnemys = new GameObject[maxEnemy];
 
         //周期的に実行したい場合はコルーチン
         StartCoroutine(Exec());
-
 
     }
 

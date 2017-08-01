@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 
 public class yourScore : MonoBehaviour {
 
@@ -12,7 +11,7 @@ public class yourScore : MonoBehaviour {
 
     public Text score;
 
-    public InputField name;
+    public new InputField name;
 
 	// Use this for initialization
 	void Start () {

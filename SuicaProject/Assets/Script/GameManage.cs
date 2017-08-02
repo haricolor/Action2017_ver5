@@ -8,10 +8,13 @@ public class GameManage : MonoBehaviour {
     public GameObject Player;
     public GameObject HPbar;
     public GameObject back;
-
+    public GameObject title;
     //
 
-
+    //BGM関連
+    public AudioClip BGM;
+    private AudioSource audioSource;
+    //
 
     //変数宣言エリア
     public bool GamePlay = false;
@@ -20,12 +23,18 @@ public class GameManage : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        //タイトルの表示
 
+        audioSource = gameObject.GetComponent<AudioSource>();
+        audioSource.clip = BGM;
+
+        GetComponent<enemyPop>().enabled = true;
+
+        //タイトルの表示
+        Title();
 
 
         //ゲームスタート
-        Game_Start();
+        //Game_Start();
 
 	}
 	
@@ -34,12 +43,13 @@ public class GameManage : MonoBehaviour {
 		
 	}
 
-    void Title() {
+    public void Title() {
 
+        Instantiate(title, new Vector3(500, 300, 0), Quaternion.identity);
 
     }
 
-    void Game_Start() {
+    public void Game_Start() {
 
         enemyPop En = GetComponent<enemyPop>();
 
@@ -47,9 +57,11 @@ public class GameManage : MonoBehaviour {
 
         Instantiate(Player, new Vector3(0, 0, 0), Quaternion.identity);
 
-        Instantiate(HPbar, new Vector3(300, 500, 0), Quaternion.identity);
+        Instantiate(HPbar, new Vector3(350, 500, 0), Quaternion.identity);
 
         Instantiate(back, new Vector3(0, 0, 0), Quaternion.identity);
+
+        //audioSource.Play();
 
         GamePlay = true;
 
@@ -63,7 +75,25 @@ public class GameManage : MonoBehaviour {
 
     }
 
-    void Resalt() {
+    public void Game_ReStart() {
+
+        Player PL = Player.GetComponent<Player>();
+
+        PL.HPmax();
+
+        enemyPop En = GetComponent<enemyPop>();
+
+        En.StartPop();
+
+        Instantiate(Player, new Vector3(0, 0, 0), Quaternion.identity);
+
+        Instantiate(HPbar, new Vector3(350, 0, 0), Quaternion.identity);
+
+    }
+
+    public void Resalt() {
+
+        //audioSource.Stop();
 
         Rnaking Rn = GetComponent<Rnaking>();
 

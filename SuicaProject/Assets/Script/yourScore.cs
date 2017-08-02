@@ -32,4 +32,10 @@ public class yourScore : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void OnDestroy()
+    {
+        Destroy(this.gameObject);
+    }
+
 }

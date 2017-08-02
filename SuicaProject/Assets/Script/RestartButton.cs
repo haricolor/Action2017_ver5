@@ -15,4 +15,9 @@ public class RestartButton : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void OnDestroy()
+    {
+        Destroy(this.gameObject);
+    }
 }

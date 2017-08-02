@@ -14,6 +14,7 @@ public class PlayerAttack : MonoBehaviour {
 
     void Start()
     {
+        
         WeaponAnim = GetComponent<Animator>();
     }
 
@@ -23,8 +24,10 @@ public class PlayerAttack : MonoBehaviour {
 
     private void Attack()
     {
+
         if (Input.GetKey(KeyCode.Space))
         {
+
             WeaponAnim.SetBool("IsAttack", true);
 
             switch (Player.Vector)

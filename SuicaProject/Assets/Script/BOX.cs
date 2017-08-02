@@ -46,4 +46,9 @@ public class BOX : MonoBehaviour {
         
 
     }
+
+    public void OnDestroy()
+    {
+        Destroy(gameObject);
+    }
 }

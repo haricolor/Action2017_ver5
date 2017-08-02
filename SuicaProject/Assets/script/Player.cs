@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
-    public static GameObject gameManager;
+    public GameObject gameManager;
+    public GameObject HPbar;
+    private bool resalt;
 
     public float speed = 5;
     public static float HP = 100;
@@ -17,8 +19,15 @@ public class Player : MonoBehaviour {
     GameObject[] PlayerRenderer;
     bool Flash = true;
 
+    public void HPmax() {
+
+        HP = 100;
+
+    }
+
     void Start()
     {
+        resalt = true;
         HeroAnimation = GetComponent<Animator>();
         HeroCollider = GetComponent<Collider2D>();
         NextTime = Time.time;
@@ -30,6 +39,10 @@ public class Player : MonoBehaviour {
         Move();
         GameOver();
         OutStage();
+
+        if (Input.GetKeyDown(KeyCode.A)) {
+            HP = -1;
+        }
     }
 
     void OnCollisionEnter2D(Collider other)
@@ -96,11 +109,22 @@ public class Player : MonoBehaviour {
 
     }
 
-    public static bool GameOver()
+    public bool GameOver()
     {
-        if(HP <= 0)
+
+        if (HP <= 0)
         {
-            gameManager.GetComponent<GameManage>().GameOver = true;
+            GameManage Ge = gameManager.GetComponent<GameManage>();
+
+            if (resalt) {
+                Ge.Resalt();
+                resalt = false;
+            }
+
+            Destroy(HPbar);
+
+            Destroy(this.gameObject);
+
             return true;
         }
         else

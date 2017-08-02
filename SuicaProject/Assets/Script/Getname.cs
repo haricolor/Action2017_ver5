@@ -22,7 +22,7 @@ public class GetName : MonoBehaviour {
 
         inputField.text = "";
 
-        Destroy(this);
+        Destroy(this.gameObject);
 
     }
 

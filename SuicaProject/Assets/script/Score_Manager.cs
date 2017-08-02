@@ -13,7 +13,7 @@ public class Score_Manager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log (ScoreTotal);
+		//Debug.Log (ScoreTotal);
 	}
 
 

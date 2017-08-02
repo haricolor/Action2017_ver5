@@ -12,7 +12,7 @@ public class bullet : MonoBehaviour {
 
 	void Start ()
 	{
-		Vector3 target = GameObject.FindGameObjectWithTag("enemy").transform.position;
+		Vector3 target = GameObject.FindGameObjectWithTag("Player").transform.position;
 		transform.up = target;
 		Debug.Log (target.x);
 		Vector3 angle = target - transform.position;
@@ -25,5 +25,12 @@ public class bullet : MonoBehaviour {
 			Destroy (this.gameObject);
 		}
 
+	}
+
+	void OnCollisionEnter2D (Collision2D coll)
+	{
+		if (coll.gameObject.tag == "Player") {
+			Destroy (gameObject);
+		}
 	}
 }

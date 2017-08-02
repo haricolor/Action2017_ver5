@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class enemy : MonoBehaviour {
 
-	public float speed = 0.05f;
+    public AudioClip damageSE;
+    private AudioSource audioSource;
+
+
+    public float speed = 0.05f;
 
 	// Use this for initialization
 	void Start () {
-
-	}
+        audioSource = gameObject.GetComponent<AudioSource>();
+        audioSource.clip = damageSE;
+    }
 
 	// Update is called once per frame
 	void Update () {
@@ -29,7 +34,8 @@ public class enemy : MonoBehaviour {
 			Destroy (gameObject);
 		} else if (coll.gameObject.tag == "Weapon") {
 			Score_Manager.ScoreTotal += 1;
-			Destroy (gameObject);
+            audioSource.Play();
+            Destroy (gameObject);
 		}
 	}
 }

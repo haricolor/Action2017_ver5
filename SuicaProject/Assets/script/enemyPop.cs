@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class enemyPop : MonoBehaviour {
 
-    //生まれてくる敵プレハブ
     public GameObject suicaNormal;
     public GameObject suicaRed;
     public GameObject suicaShooter;
@@ -16,10 +15,17 @@ public class enemyPop : MonoBehaviour {
     //アクティブ最大数
     public int maxEnemy = 10;
 
+    void Start()
+    {
+    }
 
+    void Update()
+    {
+        
+    }
 
     // Use this for initialization
-    void Start()
+    public void StartPop()
     {
         //配列確保
         existEnemys = new GameObject[maxEnemy];
@@ -27,11 +33,10 @@ public class enemyPop : MonoBehaviour {
         //周期的に実行したい場合はコルーチン
         StartCoroutine(Exec());
 
-
     }
 
     //敵を作成する
-    IEnumerator Exec()
+    public IEnumerator Exec()
     {
         while (true)
         {
@@ -40,7 +45,7 @@ public class enemyPop : MonoBehaviour {
         }
     }
 
-    void Generate()
+    public void Generate()
     {
         for (int enemyCount = 0; enemyCount < existEnemys.Length; ++enemyCount)
         {
@@ -74,7 +79,4 @@ public class enemyPop : MonoBehaviour {
             }
         }
     }
-
-
-
 }

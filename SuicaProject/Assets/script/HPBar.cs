@@ -4,8 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class HPBar : MonoBehaviour {
-	
-	void Update () {
-        this.gameObject.GetComponent<Slider>().value = Player.HP;
+
+    public GameObject This;
+
+    private void Start()
+    {
+        This.transform.SetParent(UnityEngine.Object.FindObjectOfType<Canvas>().transform);
+    }
+
+    void Update () {
+        This.gameObject.GetComponent<Slider>().value = Player.HP;
     }
 }

@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
+    public GameObject gameManager;
+    public GameObject HPbar;
+    private bool resalt;
+
     public float speed = 5;
     public static float HP = 100;
     public static string Vector = "Front";
@@ -15,8 +19,15 @@ public class Player : MonoBehaviour {
     GameObject[] PlayerRenderer;
     bool Flash = true;
 
+    public void HPmax() {
+
+        HP = 100;
+
+    }
+
     void Start()
     {
+        resalt = true;
         HeroAnimation = GetComponent<Animator>();
         HeroCollider = GetComponent<Collider2D>();
         NextTime = Time.time;
@@ -28,6 +39,10 @@ public class Player : MonoBehaviour {
         Move();
         GameOver();
         OutStage();
+
+        if (Input.GetKeyDown(KeyCode.A)) {
+            HP = -1;
+        }
     }
 
     void OnCollisionEnter2D(Collider other)
@@ -35,13 +50,13 @@ public class Player : MonoBehaviour {
         if (other.tag == "enemy")
         {
             HP -= 10;
-            HeroCollider.isTrigger = false;
+            HeroCollider.isTrigger = true;
             StartCoroutine("Blinker");
         }
         if (other.tag == "bullet")
         {
             HP -= 5;
-            HeroCollider.isTrigger = false;
+            HeroCollider.isTrigger = true;
             StartCoroutine("Blinker");
         }
         Invoke("StartCollider", InvincibleTime);
@@ -94,10 +109,21 @@ public class Player : MonoBehaviour {
 
     }
 
-    public static bool GameOver()
+    public bool GameOver()
     {
-        if(HP <= 0)
+
+        if (HP <= 0)
         {
+            GameManage Ge = gameManager.GetComponent<GameManage>();
+
+            if (resalt) {
+                Ge.Resalt();
+                resalt = false;
+            }
+
+            Destroy(HPbar);
+
+            Destroy(this.gameObject);
 
             return true;
         }
@@ -117,7 +143,7 @@ public class Player : MonoBehaviour {
 
     void StartCollider()
     {
-        HeroCollider.isTrigger = true;
+        HeroCollider.isTrigger = false;
         Flash = false;
     }
 

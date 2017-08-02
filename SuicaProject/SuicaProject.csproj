@@ -80,25 +80,29 @@
   <ItemGroup>
     <Compile Include="Assets\GhostSprites2D\Scripts\CameraController.cs" />
     <Compile Include="Assets\GhostSprites2D\Scripts\GhostSprites\GhostSprites.cs" />
-    <Compile Include="Assets\script\BOX.cs" />
-    <Compile Include="Assets\script\GameStart.cs" />
-    <Compile Include="Assets\script\Getname.cs" />
-    <Compile Include="Assets\script\HPBar.cs" />
-    <Compile Include="Assets\script\Player.cs" />
-    <Compile Include="Assets\script\PlayerAttack.cs" />
-    <Compile Include="Assets\script\RestartButton.cs" />
-    <Compile Include="Assets\script\Rnaking.cs" />
-    <Compile Include="Assets\script\Score_Manager.cs" />
-    <Compile Include="Assets\script\bonus.cs" />
-    <Compile Include="Assets\script\bullet.cs" />
-    <Compile Include="Assets\script\enemy.cs" />
-    <Compile Include="Assets\script\enemyPop.cs" />
-    <Compile Include="Assets\script\red.cs" />
-    <Compile Include="Assets\script\shooter.cs" />
-    <Compile Include="Assets\script\yourScore.cs" />
+    <Compile Include="Assets\Script\BOX.cs" />
+    <Compile Include="Assets\Script\GameManage.cs" />
+    <Compile Include="Assets\Script\Get_Name.cs" />
+    <Compile Include="Assets\Script\Getname.cs" />
+    <Compile Include="Assets\Script\HPBar.cs" />
+    <Compile Include="Assets\Script\Player.cs" />
+    <Compile Include="Assets\Script\PlayerAttack.cs" />
+    <Compile Include="Assets\Script\PlayerSE.cs" />
+    <Compile Include="Assets\Script\RestartButton.cs" />
+    <Compile Include="Assets\Script\Rnaking.cs" />
+    <Compile Include="Assets\Script\Score_Manager.cs" />
+    <Compile Include="Assets\Script\Title.cs" />
+    <Compile Include="Assets\Script\bonus.cs" />
+    <Compile Include="Assets\Script\bullet.cs" />
+    <Compile Include="Assets\Script\enemy.cs" />
+    <Compile Include="Assets\Script\enemyPop.cs" />
+    <Compile Include="Assets\Script\red.cs" />
+    <Compile Include="Assets\Script\shooter.cs" />
+    <Compile Include="Assets\Script\yourScore.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\GhostSprites2D\README.txt" />
+    <None Include="Assets\Pixel Font - Tripfive\_README.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
